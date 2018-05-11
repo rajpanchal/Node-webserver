@@ -2,6 +2,7 @@ const express = require('express');
 var fs = require("fs");
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
 var app = express();
 
 // -----------------------------------------------------------------------------------------------------------------------------------------
@@ -22,7 +23,7 @@ var app = express();
                                                                         next();
                                                                       });
 
-                                                                      // UNCOMMENT BELOW CODE WHEN WEBSITE IS DOWN 
+                                                                      // UNCOMMENT BELOW CODE WHEN WEBSITE IS DOWN
                                                                       // app.use((req, res, next) => {
                                                                       //   res.render('maintain.hbs');
                                                                       // });
@@ -63,6 +64,6 @@ var app = express();
 
 
                                     //listen
-                                    app.listen(3000, () => {
-                                      console.log('Server is up on port 3000');
+                                    app.listen(port, () => {
+                                      console.log(`Server is up on port ${port}`);
                                     });
